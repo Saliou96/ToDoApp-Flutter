@@ -36,18 +36,18 @@ class TaskView extends StatelessWidget {
               return ListView.builder(
                 itemCount: controller.tasks.length,
                 itemBuilder: (context, index) {
-                  final todo = controller.tasks[index];
+                  final task = controller.tasks[index];
                   return ListTile(
                     title: Text(
-                      todo.title,
+                      task.title,
                       style: TextStyle(
-                        decoration: todo.isCompleted
+                        decoration: task.isCompleted.value
                             ? TextDecoration.lineThrough
                             : null,
                       ),
                     ),
                     leading: Checkbox(
-                      value: todo.isCompleted,
+                      value: task.isCompleted.value,
                       onChanged: (value) {
                         controller.toggleTodoComplete(index);
                       },

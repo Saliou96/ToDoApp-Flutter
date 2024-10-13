@@ -16,7 +16,12 @@ class TaskService {
     tasks.removeAt(index);
   }
 
+  // void toggleTodoComplete(int index) {
+  //   tasks[index].isCompleted = !tasks[index].isCompleted;
+  // }
+
   void toggleTodoComplete(int index) {
-    tasks[index].isCompleted = !tasks[index].isCompleted;
+    var task = tasks[index];
+    task.isCompleted.value = !task.isCompleted.value; // Mise à jour réactive
   }
 }
