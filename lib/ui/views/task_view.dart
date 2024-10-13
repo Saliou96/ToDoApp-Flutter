@@ -34,9 +34,9 @@ class TaskView extends StatelessWidget {
           Expanded(
             child: Obx(() {
               return ListView.builder(
-                itemCount: controller.todos.length,
+                itemCount: controller.tasks.length,
                 itemBuilder: (context, index) {
-                  final todo = controller.todos[index];
+                  final todo = controller.tasks[index];
                   return ListTile(
                     title: Text(
                       todo.title,

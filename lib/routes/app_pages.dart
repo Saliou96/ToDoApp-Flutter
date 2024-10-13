@@ -6,7 +6,7 @@ import 'app_routes.dart';
 class AppPages {
   static final pages = [
     GetPage(
-      name: AppRoutes.todo,
+      name: AppRoutes.home,
       page: () => TaskView(),
       binding: TaskBinding(),
     ),

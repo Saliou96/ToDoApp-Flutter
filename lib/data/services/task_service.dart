@@ -1,7 +1,8 @@
+import 'package:get/get.dart';
 import 'package:todoapp/data/models/task.dart';
 
-class TaskRepository {
-  List<Task> tasks = [];
+class TaskService {
+  RxList<Task> tasks = <Task>[].obs;
 
   List<Task> getTodos() {
     return tasks;

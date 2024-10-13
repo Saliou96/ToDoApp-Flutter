@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'To Do App',
-      initialRoute: AppRoutes.todo,
+      initialRoute: AppRoutes.home,
       getPages: AppPages.pages,
     );
   }

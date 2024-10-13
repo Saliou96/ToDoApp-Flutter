@@ -1,3 +1,3 @@
 class AppRoutes {
-  static const todo = '/todo';
+  static const home = '/';
 }

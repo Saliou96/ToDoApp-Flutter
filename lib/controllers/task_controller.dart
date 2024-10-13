@@ -1,36 +1,30 @@
 import 'package:get/get.dart';
 import 'package:todoapp/data/models/task.dart';
-import 'package:todoapp/data/repositories/task_repository.dart';
+import 'package:todoapp/data/services/task_service.dart';
 
 class TaskController extends GetxController {
-  final TaskRepository todoRepository;
+  final TaskService taskService = Get.find<TaskService>();
 
-  TaskController(this.todoRepository);
-
-  var todos = <Task>[].obs; // Liste observable
+  var tasks = <Task>[].obs;
 
   @override
   void onInit() {
-    todos.value = todoRepository.getTodos(); // Récupère la liste des tâches
+    tasks.value = taskService.getTodos();
     super.onInit();
   }
 
   void addTodo(String title) {
     if (title.isNotEmpty) {
       var newTodo = Task(title: title);
-      todoRepository.addTodo(newTodo);
-      // todos.add(newTodo);
+      taskService.addTodo(newTodo);
     }
   }
 
   void removeTodoAt(int index) {
-    todoRepository.removeTodoAt(index);
-    // todos.removeAt(index);
+    taskService.removeTodoAt(index);
   }
 
   void toggleTodoComplete(int index) {
-    todoRepository.toggleTodoComplete(index);
-    todos[index].isCompleted = !todos[index].isCompleted;
-    todos.refresh(); // Rafraîchir la liste des tâches
+    taskService.toggleTodoComplete(index);
   }
 }
